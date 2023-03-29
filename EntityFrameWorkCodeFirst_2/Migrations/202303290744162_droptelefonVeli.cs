@@ -19,7 +19,7 @@
                })
             .PrimaryKey(t => t.VeliID);
 
-            Sql("INSERT INTO VeliBackup SELECT (VeliID, Ad, SoyAd, Telefon) SELECT (VeliID, Ad, SoyAd, Telefon) FROM Veli");
+            Sql("INSERT INTO VeliBackup (VeliID,Ad,SoyAd,Telefon) SELECT VeliID,Ad,SoyAd,Telefon FROM Veli");
 
             DropColumn("dbo.Veli", "Telefon");
         }
